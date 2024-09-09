@@ -1,0 +1,29 @@
+#server:
+#  port: 8083
+#  servlet:
+#    context-path: / user-app
+
+spring:
+  # Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/book_shop
+    username: postgres
+    password: admin
+  # JPA properties
+  jpa:
+    show_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        format_sql: true
+    open-in-view: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
